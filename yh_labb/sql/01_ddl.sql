@@ -1,5 +1,5 @@
 CREATE TABLE "student" (
-  "student_id" INTEGER PRIMARY KEY,
+  "student_id" serial PRIMARY KEY,
   "class_id" integer NOT NULL
 );
 
@@ -13,14 +13,14 @@ CREATE TABLE "student_info" (
 );
 
 CREATE TABLE "class" (
-  "class_id" integer PRIMARY KEY,
+  "class_id" serial PRIMARY KEY,
   "class_name" varchar(100),
   "manager_id" integer NOT NULL,
   "program_id" integer NOT NULL
 );
 
 CREATE TABLE "education_manager" (
-  "manager_id" integer PRIMARY KEY
+  "manager_id" serial PRIMARY KEY
 );
 
 CREATE TABLE "education_manager_info" (
@@ -33,12 +33,12 @@ CREATE TABLE "education_manager_info" (
 );
 
 CREATE TABLE "program" (
-  "program_id" integer PRIMARY KEY,
+  "program_id" serial PRIMARY KEY,
   "program_name" varchar(50)
 );
 
 CREATE TABLE "instructor" (
-  "instructor_id" integer PRIMARY KEY
+  "instructor_id" serial PRIMARY KEY
 );
 
 CREATE TABLE "instructor_info" (
@@ -57,7 +57,7 @@ CREATE TABLE "program_course" (
 );
 
 CREATE TABLE "course" (
-  "course_id" integer PRIMARY KEY,
+  "course_id" serial PRIMARY KEY,
   "course_name" varchar(100) NOT NULL,
   "course_code" varchar(16) NOT NULL,
   "course_points" integer,
@@ -71,7 +71,7 @@ CREATE TABLE "course_instructor" (
 );
 
 CREATE TABLE "company" (
-  "company_id" integer PRIMARY KEY,
+  "company_id" serial PRIMARY KEY,
   "company_name" varchar(50),
   "company_address" varchar(100),
   "org_number" varchar(13),
@@ -79,7 +79,7 @@ CREATE TABLE "company" (
 );
 
 CREATE TABLE "consultant" (
-  "consultant_id" integer PRIMARY KEY,
+  "consultant_id" serial PRIMARY KEY,
   "company_id" integer NOT NULL,
   "instructor_id" integer NOT NULL,
   "hourly_rate" integer

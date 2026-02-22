@@ -1,6 +1,6 @@
 Table student {
-  student_id INTEGER [pk]
-  class_id integer [not null, ref: - class.class_id]
+  student_id serial [pk]
+  class_id integer [not null, ref: > class.class_id]
 }
 
 Table student_info{
@@ -13,14 +13,14 @@ Table student_info{
 }
 
 Table class{
-  class_id integer [primary key]
+  class_id serial [pk]
   class_name varchar(100)
-  manager_id integer [not null, ref: - education_manager.manager_id]
-  program_id integer [not null, ref: - program.program_id]
+  manager_id integer [not null, ref: > education_manager.manager_id]
+  program_id integer [not null, ref: > program.program_id]
 }
 
 Table education_manager{
-  manager_id integer [primary key]
+  manager_id serial [pk]
 }
 
 Table education_manager_info{
@@ -33,12 +33,12 @@ Table education_manager_info{
 }
 
 Table program{
-  program_id integer [pk]
+  program_id serial [pk]
   program_name varchar(50)
 }
 
 Table instructor{
-  instructor_id integer [pk]
+  instructor_id serial [pk]
 }
 
 Table instructor_info{
@@ -56,7 +56,7 @@ Table program_course{
 }
 
 Table course{
-  course_id integer [pk]
+  course_id serial [pk]
   course_name varchar(100) [not null]
   course_code varchar(16) [not null]
   course_points integer
@@ -69,7 +69,7 @@ Table course_instructor{
 }
 
 Table company{
-  company_id integer [pk]
+  company_id serial [pk]
   company_name varchar(50)
   company_address varchar(100)
   org_number varchar(13)
@@ -77,7 +77,7 @@ Table company{
 }
 
 Table consultant{
-  consultant_id integer [pk]
+  consultant_id serial [pk]
   company_id integer [not null, ref: - company.company_id]
   instructor_id integer [not null, ref: - instructor.instructor_id]
   hourly_rate integer
