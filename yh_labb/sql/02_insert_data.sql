@@ -41,11 +41,14 @@ INSERT INTO course(course_name, course_code, course_points, course_desc) VALUES
 INSERT INTO instructor DEFAULT VALUES;
 INSERT INTO instructor DEFAULT VALUES;
 INSERT INTO instructor DEFAULT VALUES;
+INSERT INTO instructor DEFAULT VALUES;
 
 INSERT INTO instructor_info(instructor_id, first_name, last_name, address, email, personal_id_number) VALUES
 (1, 'John', 'Codeman', 'Datorgatan 64', 'johncode@yrkco.com', '19700101-0000'),
-(2, 'Gertrude', 'Userinterface', 'Grafikvägen 14', 'gui@yrkco.com', '19750305-1231'),
-(3, 'Sam', 'Systeman', 'Peppargatan 24', 'samsys@yrkco.com', '19000101-2300');
+(2, 'Gertrude', 'Usserinterface', 'Grafikvägen 14', 'gui@yrkco.com', '19750305-1231'),
+(3, 'Sam', 'Systeman', 'Peppargatan 24', 'samsys@yrkco.com', '19000101-2300'),
+(4, 'Helena', 'Helikopter', 'Luftvägen 68', 'helhel@yrkco.com', '18460513-4628'),
+(5, 'Peter', 'Pelikan', 'Hamngatan 41', 'pepeli@yrkco.com', '19760323-6678');
 
 INSERT INTO program_course(program_id, course_id) VALUES
 (1, 1),
@@ -59,11 +62,15 @@ INSERT INTO program_course(program_id, course_id) VALUES
 INSERT INTO course_instructor(course_id, instructor_id) VALUES
 (1, 1),
 (2, 1),
-(5, 3);
+(3, 4),
+(4, 2),
+(5, 3),
+(6, 5);
 
 INSERT INTO company(company_name, company_address, org_number, has_f_tax) VALUES
 ('ConsulCo', 'Industriparken 24', '58284636-1064', false),
 ('ProCon', 'Arbetsgatan 1', '46375637-1974', true);
 
 INSERT into consultant(company_id, instructor_id, hourly_rate) VALUES
-(1, 1, 500);
+(1, 1, 400),
+(2, 5, 500);
