@@ -1,7 +1,7 @@
 --Get information about classes, courses, programs, students and managers with some queries
 
 --Class name and manager full name
-SELECT c.class_name, emi.first_name || ' ' || emi.last_name
+SELECT c.class_name, emi.first_name || ' ' || emi.last_name AS manager_name
 FROM class c
 JOIN education_manager em ON c.manager_id = em.manager_id --Match manager id in education_manager and education_manager_info to get info for this student
 JOIN education_manager_info emi ON em.manager_id = emi.manager_id;

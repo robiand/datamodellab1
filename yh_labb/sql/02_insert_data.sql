@@ -42,6 +42,7 @@ INSERT INTO instructor DEFAULT VALUES;
 INSERT INTO instructor DEFAULT VALUES;
 INSERT INTO instructor DEFAULT VALUES;
 INSERT INTO instructor DEFAULT VALUES;
+INSERT INTO instructor DEFAULT VALUES;
 
 INSERT INTO instructor_info(instructor_id, first_name, last_name, address, email, personal_id_number) VALUES
 (1, 'John', 'Codeman', 'Datorgatan 64', 'johncode@yrkco.com', '19700101-0000'),
